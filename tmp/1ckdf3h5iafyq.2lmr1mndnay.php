@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>重置密码</title>
+</head>
+<body>
+	<form action="/handleResetpw">
+		<input type="text" name="newpw">
+		<input type="hidden" name="uid" value="<?php echo $uid; ?>">
+		<input type="submit" value="提交">
+	</form>
+</body>
+</html>
