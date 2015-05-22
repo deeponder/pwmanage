@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>无标题文档</title>
-<link href="vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="vendor/css/register.css" rel="stylesheet" type="text/css">
-<link href="vendor/css/normalize.css" rel="stylesheet"/>
-<link href="vendor/css/jquery-ui.css" rel="stylesheet"/>
-<link href="vendor/css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>
+<link href="app/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="app/assets/css/register.css" rel="stylesheet" type="text/css">
+<link href="app/assets/css/normalize.css" rel="stylesheet"/>
+<link href="app/assets/css/jquery-ui.css" rel="stylesheet"/>
+<link href="app/assets/css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>
 <style type="text/css">
 body{font:normal 15px/1.5 Arial, Helvetica, Free Sans, sans-serif;overflow-y:scroll;padding:60px 0 0 0;}
 #my-form{width:755px;margin:0 auto;border:0px solid #ccc;padding:3em;border-radius:3px;box-shadow:0 0 2px rgba(0,0,0,.2);background-color:#000;
@@ -45,7 +45,7 @@ filter: alpha(opacity=0);
 
 </head>
 
-<body background="vendor/images/body1.jpg">
+<body background="app/assets/images/body1.jpg">
 <script src="vendor/jquery/jquery-1.11.3.min.js"></script>
 <script src="vendor/jquery/bootstrap.min.js"></script>
 <div class="row" 
@@ -194,7 +194,7 @@ function submit1()
 	$.ajax(
 	{
 		type:'get',
-		url:'registerintoTable?username='+username+'&password='+password+'&mail='+mail,
+		url:'/registerintoTable?username='+username+'&password='+password+'&mail='+mail,
 		//data:{id:username,password:password,repassword:repeat,mail:mail},
 		dataType:'text',
 		success:function(data)

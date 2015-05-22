@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>无标题文档</title>
-<link href="vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="vendor/css/login.css" rel="stylesheet" type="text/css">
+<link href="app/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="app/assets/css/login.css" rel="stylesheet" type="text/css">
 
 </head>
 
-<body background="vendor/images/body1.jpg">
+<body background="app/assets/images/body1.jpg">
 <script src="vendor/jquery/jquery-1.11.3.min.js"></script>
 <script src="vendor/jquery/bootstrap.min.js"></script>
 <script type="text/javascript" src="vendor/jquery/jquery-1.6.2.min.js"></script>

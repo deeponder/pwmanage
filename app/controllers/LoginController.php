@@ -12,7 +12,7 @@ class LoginController
         $username = $_GET['id'];
         $password = $_GET['password'];
         $db       = $f3->get('DB');
-        $mysql    = new \DB\SQL\Mapper($db, 'person_info');
+        $mysql    = new \DB\SQL\Mapper($db, 'user');
         $num      = $mysql->count(array('nick_name=? and password=?', $username, md5($password)));
         if ($num != 0) {
             echo 1;
@@ -27,8 +27,9 @@ class LoginController
         echo Template::instance()->render('application/register.html');
     }
     function registerintoTable($f3) {
+
         $db               = $f3->get('DB');
-        $mysql            = new \DB\SQL\Mapper($db, 'person_info');
+        $mysql            = new \DB\SQL\Mapper($db, 'user');
         $username         = $_GET['username'];
         $password         = $_GET['password'];
         
@@ -38,7 +39,7 @@ class LoginController
         if ($num == 0) {
             $mysql->nick_name = $username;
             $mysql->password  = md5($password);
-            $mysql->mail      = $mail;
+            $mysql->email      = $mail;
             $mysql->save();
             header("Location:login");
         } 
@@ -46,7 +47,7 @@ class LoginController
     }
     function checkUse($f3) {
         $db       = $f3->get('DB');
-        $mysql    = new \DB\SQL\Mapper($db, 'person_info');
+        $mysql    = new \DB\SQL\Mapper($db, 'user');
         $username = $_GET['username'];
         $num      = $mysql->count(array('nick_name=?', $username));
         if ($num == 0) echo 1;
@@ -57,5 +58,14 @@ class LoginController
         session_start();
         unset($_SESSION['user_id']);
         header("Location:login");
+    }
+
+//测试数据库操作
+    function test($f3){
+        echo "hell";
+         $db       = $f3->get('DB');
+        $user    = new \DB\SQL\Mapper($db, 'user');
+        $res = $user->find(array('nick_name=?','peng'));
+        echo $res[0]['email'];
     }
 }
