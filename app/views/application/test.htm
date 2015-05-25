@@ -1,8 +1,9 @@
-<!doctype html>
-<html>
+<!-- <!doctype html> -->
+<!-- <html>
 <head><title>Test Page</title></head>
 <body>
-  <h1>{{ @test_var }}</h1>
+  <h1>hello.{{ @test_var }}</h1>
+  <a href="http://{{@test_var}}.com">jkkj</a>
 	<div id="test">
 		click me!
 	</div>
@@ -10,8 +11,24 @@
 
 	<script>
 	$('#test').click(function(){
-		alert('hhh');
+		alert({{@test_var}});
+		// var url = "jk"+{{@test_var}};
+		// alert(url);
 	});
 	</script>
 </body>
+</html> -->
+<!DOCTYPE html >
+<html>
+<head>
+<title>跳转界面</title>
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="refresh" content="2;url=http://www.baidu.com"/>  -->
+
+</head>
+
+<body>
+5s后跳转......
+</body>
 </html>
+

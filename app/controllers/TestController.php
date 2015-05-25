@@ -9,7 +9,7 @@ class TestController{
 		// $users = $uModel->select('*');
 		// var_dump($users);
 
-		$f3->set("test_var","Hello World!");
+		$f3->set("mailSuf","qq.com");
 		echo Template::instance()->render('application/test.htm');
 	}
 
@@ -75,7 +75,7 @@ class TestController{
 
 	//发送邮件给指定邮箱
 	function sendmail($email,$message,$subject){
-		$smtp = new SMTP ( 'smtp.qq.com', '465', 'ssl', 'footprint@deeponder.com', '197808hkhl');
+		$smtp = new SMTP ( 'smtp.163.com', '465', 'ssl', 'footprint@deeponder.com', '197808hkhl');
 		$smtp->set('From','"FootPrint" <footprint@deeponder.com>');
 		$smtp->set('Subject',$subject);
 		$smtp->set('To','<'.$email.'>');
