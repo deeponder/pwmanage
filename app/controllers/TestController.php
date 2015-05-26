@@ -13,6 +13,11 @@ class TestController{
 		echo Template::instance()->render('application/test.htm');
 	}
 
+	//学撸bootstrap
+	function learnbs($f3){
+		echo Template::instance()->render('learn/learnbs.html');
+	}
+
 	//处理验证邮件
 	function reg($f3){
 		$db       = $f3->get('DB');

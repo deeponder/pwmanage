@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 适应移动设备 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>Bootstrap</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="app/assets/css/learnbs.css" rel="stylesheet">
+</head>
+<body>
+<!-- 标题 -->
+	<h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+	<h2>h2. Bootstrap heading <small>Secondary text</small></h2>
+
+<!-- 段落 和 高亮关键字等排版样式-->
+	<p class="lead">文件中定义的两个 Less <mark>变量决定了排版尺寸</mark>：@font-size-base 和 @line-height-base。第一个变量定义了全局 font-size 基准，第二个变量是 line-height 基准。<small>我们使用这些变量</small>和一些简单的公式计算出其它所有页面元素的 margin、 padding 和 line-height。自定义这些变量即可改变 Bootstrap 的<strong>默认样式</strong>。</p>
+
+<!-- 引用 -->
+	<blockquote>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+	</blockquote>
+
+<!-- 代码块和内联代码 -->
+	<pre class="col-sm-10">&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+	<code>hello bootstrap</code>
+
+<!--表格  -->
+	<table class="table table-hover table-striped table-bordered">
+	  <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+      </thead>
+	</table>
+
+<!-- 表单 -->
+<form action="" method="POST" role="form" class="form-horizontal">
+	<legend>Bootstrap form</legend>
+
+	<div class="form-group">
+		<label for="">name</label>
+		<input type="text" class="form-control" id="" placeholder="Input field">
+	</div>
+	<div class="form-group">
+		<label for="file">选取文件</label>
+		<input type="file" id="file">
+	</div>
+	
+
+	<button type="submit" class="btn btn-primary">确定</button>
+</form>
+
+<div class="alert alert-danger">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong>Title!</strong> Alert body ...
+</div>
+
+<span class="label label-success">hello</span>
+	<div class="container">
+	  <div class="row">
+	  <div class="col-md-2">.col-md-2</div>
+	  <div class="col-md-4">.col-md-4</div>
+	  <div class="col-md-6">.col-md-6</div>
+	</div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="row">
+	  <div class="col-md-2">.col-md-2</div>
+	  <div class="col-md-4">.col-md-4</div>
+	  <div class="col-md-6">.col-md-6</div>
+	</div>
+	</div>
+
+//当前位置
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol>
+
+<div class="jumbotron">
+  <h1>Hello, world!</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script></body>
+</html>

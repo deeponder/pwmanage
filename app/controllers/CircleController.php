@@ -20,7 +20,7 @@
 			
 		}
 
-		function savepost($f3){
+		function savepost(){
 			// $db = $f3->get('DB');
 			// $post = new DBSQLMapper($db,'post');
 			// $post->content = $_POST['content'];
@@ -28,8 +28,34 @@
 			// $post->userid = $_SESSION['user_id'];
 
 			//图片上传
-			$upfile = "app/uploads/".$_FILES['file']['name'];
-			move_uploaded_file($_FILES['file']['tmp_name'], $upfile);
+			// $upfile = "app/uploads/".$_FILES['file1']['name'];
+			// move_uploaded_file($_FILES['file1']['tmp_name'], $upfile);
+			// 
+
+			if(isset($_POST['submit'])){
+			$name = $_FILES["file"]["name"];
+			//$size = $_FILES['file']['size']
+			//$type = $_FILES['file']['type']
+
+			$tmp_name = $_FILES['file']['tmp_name'];
+			$error = $_FILES['file']['error'];
+
+			if (isset ($name)) {
+			    if (!empty($name)) {
+
+			    $location = 'app/uploads/';
+
+			    if  (move_uploaded_file($tmp_name, $location.$name)){
+			        echo 'Uploaded';    
+			        }
+
+			        } else {
+			          echo 'please choose a file';
+			          }
+			    }
+			}else{
+				echo "aha!";
+			}
 
 		}
 	}
