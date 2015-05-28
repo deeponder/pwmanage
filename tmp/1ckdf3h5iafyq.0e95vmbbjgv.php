@@ -48,7 +48,7 @@ filter: alpha(opacity=0);
 <body background="app/assets/images/body1.jpg">
 <script src="vendor/jquery/jquery-1.11.3.min.js"></script>
 <script src="vendor/jquery/bootstrap.min.js"></script>
-<div class="row" 
+<div class="row" >
 
   <div class="eightcol last" style="height:800px;"> 
 <div  id="my-h1"align="center" ><font size="5" color="#FFFFFF">注册</font></div>
@@ -58,27 +58,32 @@ filter: alpha(opacity=0);
    <p align="center">
     <div style="float:left; display:inline">
 
-          <div><label><font color="#FFFFFF">用户名:</font></label><input id="username" name="username" type="text"  onblur="checkUse()"></div>  <div  align="center" id="flag1" style="display:none"> <font color="#FFFFFF">erqwer</font></div>
-          <div><label><font color="#FFFFFF">密码:</font></label><input id="pass" name="password" type="password"  onblur = "checkpass()"/></div> <div  align="center" id="flag2"  style="display:none"> <font color="#FFFFFF"> </font></div>
-          <div><label><font color="#FFFFFF">重复密码:</font></label><input id="repass" name="repassword" type="password"  onblur = "checkRe()"/></div><div  align="center" id="flag3"  style="display:none"> <font color="#FFFFFF"> </font></div>
-          <div><label><font color="#FFFFFF">邮箱:</font></label><input id="email" name="email" data-ideal="required email" type="email"  onblur="checkmail()"/></div><div  align="center" id="flag4"  style="display:none"> <font color="#FFFFFF" > </font></div>
+          <div><label><font color="#FFFFFF">username:</font></label><input id="username" name="username" type="text"  onblur="checkUse()"></div>  <div  align="center" id="flag1" style="display:none"> <font color="#FFFFFF">erqwer</font></div>
+          <div><label><font color="#FFFFFF">password:</font></label><input id="pass" name="password" type="password"  onblur = "checkpass()"/></div> <div  align="center" id="flag2"  style="display:none"> <font color="#FFFFFF"> </font></div>
+          <div><label><font color="#FFFFFF">repeatPassword:</font></label><input id="repass" name="repassword" type="password"  onblur = "checkRe()"/></div><div  align="center" id="flag3"  style="display:none"> <font color="#FFFFFF"> </font></div>
+          <div><label><font color="#FFFFFF">e-mail:</font></label><input id="email" name="email" data-ideal="required email" type="email"  onblur="checkmail()"/></div><div  align="center" id="flag4"  style="display:none"> <font color="#FFFFFF" > </font></div>
         <!--   <div><label><font color="#FFFFFF">出生日期:</font></label><input id="date" name="date" class="datepicker" data-ideal="date" type="text" placeholder="月/日/年"/></div> -->
           <!-- <div><label><font color="#FFFFFF">上传头像:</font></label><input id="file" name="file" multiple type="file"/></div> -->
     
    </p>
         </div> 
 
-      
+       
 <div><hr/></div>
-      <div   style="margin-top:90px" >
-	  
+       <div style="margin-top:10px">
+       	
+       	<label>yes</label>
+       </div>
+      <div   style="margin-top:40px" >
+	     
         <button type="button" style="background-color:#060; border-color:#030; width:100px;"  onclick = "submit1()"><font color="#FFFFFF">提交</font></button>
         <button id="reset" type="button" style="background-color:#060; border-color:#030; width:100px;"><font color="#FFFFFF">重置</font></button>
-         <a href="logout">logout</a>
-		 
+        
+     
       </div>
-	 
-  
+	
+   
+		 
     </form>
 
     <!-- End Form -->
@@ -194,7 +199,7 @@ function submit1()
 	$.ajax(
 	{
 		type:'get',
-		url:'/registerintoTable?username='+username+'&password='+password+'&mail='+mail,
+		url:'registerintoTable?username='+username+'&password='+password+'&mail='+mail,
 		//data:{id:username,password:password,repassword:repeat,mail:mail},
 		dataType:'text',
 		success:function(data)
@@ -203,6 +208,15 @@ function submit1()
 			{
 		       warning1.innerHTML="该用户名已被注册";
 		       warning1.style.display="block";
+			}
+			else if(data=='2')
+			{
+				warning4.innerHTML="该邮箱已被注册";
+				warning4.style.display="block";
+			}
+			else
+			{
+				window.location.href="verify?username="+username;
 			}
 		},
 		error:function()
@@ -271,7 +285,29 @@ function checkmail()
 			warning4.innerHTML="邮箱格式不正确";
 			warning4.style.display="block";
 		}
+		else{
+		$.ajax(
+	{
+		type:'get',
+		url:'checkMailUse?mail='+mail.value,
+		dataType:'text',
+		success:function(data)
+		{
+			if(data=='0')
+			{
+				warning4.innerHTML="该邮箱已被注册";
+				warning4.style.display="block";
+
+			}
+			// else
+			// {
+			// 	document.getElementById('submit').disabled=false;
+			// }
+
+		}
+	});
 	}
+}
 }
 function checkUse()
 {

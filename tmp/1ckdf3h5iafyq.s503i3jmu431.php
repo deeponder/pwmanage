@@ -17,28 +17,27 @@
 <div id="div">
 <div></div>
 
-<div style="padding: 50px 100px 20px 120px;">
+<div style="padding: 20px 100px 20px 140px;">
   
    <form method="post" action="" onsubmit="" class="login">
     <p>
-      <label for="login" ><font color="#FFFFFF">帐号:</font></label>
+      <label for="login" ><font color="#FFFFFF">Username:</font></label>
       <input type="text" name="id" id="id" value=""></input>
     </p>
 
     <p>
-      <label for="password" ><font color="#FFFFFF">密码:</font></label>
+      <label for="password" ><font color="#FFFFFF">password:</font></label>
       <input type="password" name="password" id="password" value=""></input>
     </p>
 
     </form>
 </div>
-<p align="center"><button type="button" class="btn btn-primary" style="background-color:#060; border-color:#030; width:100px;" onclick="check()" >登录</button></p><a href="register"  style="margin-right:130px;float:right">注册</a>
+<p align="center"><button type="button" class="btn btn-primary" style="background-color:#060; border-color:#030; width:100px;" onclick="check()" >Login</button></p><a href="forgetpass"  style="margin-right:100px;float:right">forgetPassword?</a><a href="register"  style="margin-right:70px;float:right">Register</a>
 </div>
 </body>
 <script type="text/javascript">
 function check()
 {
-  alert("ok");
   var id = document.getElementById('id').value;
   var password = document.getElementById('password').value;
   $.ajax(
@@ -50,11 +49,14 @@ function check()
     {
       if(data=='1')
       {
-        alert("yes");
-        window.location.href = 'register';
-      }    
+        window.location.href = 'home';
+      }   
+      else if(data=='2')
+      {
+        alert("the accout has not verified");
+      } 
       else
-        alert("no");
+        alert("no account");
     },
     error:function(data)
     {

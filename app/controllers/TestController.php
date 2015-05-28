@@ -9,7 +9,7 @@ class TestController{
 		// $users = $uModel->select('*');
 		// var_dump($users);
 
-		$f3->set("mailSuf","qq.com");
+		// $f3->set("mailSuf","qq.com");
 		echo Template::instance()->render('application/test.htm');
 	}
 
@@ -88,4 +88,33 @@ class TestController{
 		$smtp->send($message);
 		
 	}
+
+	function testupload(){
+		var_dump($_POST['submit']);
+		if(isset($_POST['submit'])){
+			$name = $_FILES["file"]["name"];
+			//$size = $_FILES['file']['size']
+			//$type = $_FILES['file']['type']
+
+			$tmp_name = $_FILES['file']['tmp_name'];
+			$error = $_FILES['file']['error'];
+
+			if (isset ($name)) {
+			    if (!empty($name)) {
+
+			    $location = 'app/uploads/';
+
+			    if  (move_uploaded_file($tmp_name, $location.$name)){
+			        echo 'Uploaded';    
+			        }
+
+			        } else {
+			          echo 'please choose a file';
+			          }
+			    }
+			}else{
+				echo "ddd";
+			}
+	}
+
 }

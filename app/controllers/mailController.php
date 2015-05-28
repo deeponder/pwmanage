@@ -111,40 +111,8 @@ class mailController{
     {
         echo Template::instance()->render('application/forgetpw.html');
     }
-    // function makeIdCode($f3)
-    // {
-    //     $mail = $_GET['mail'];
-    //     $db       = $f3->get('DB');
-    //     $user    = new \DB\SQL\Mapper($db, 'user');
-    //     $res = $user->find(array('email=?',$mail));
-
-    //     if($res==Null)
-    //     {
-    //         echo 0;
-    //     }
-    //     else
-    //     {
-    //         $chars = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',  
-    //                         'i', 'j', 'k', 'l','m', 'n', 'o', 'p', 'q', 'r', 's',  
-    //                         't', 'u', 'v', 'w', 'x', 'y','z', 'A', 'B', 'C', 'D',  
-    //                         'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L','M', 'N', 'O',  
-    //                         'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z',  
-    //                         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
-    //         $keys = array();
-    //         $keys = array_rand($chars,6);
-    //         $idCode = "";
-    //         for($i=0;$i<6;$i++)
-    //         {
-    //             $idCode.=$chars[$keys[$i]];
-    //         }
-    //         $username = $res[0]->nick_name;
-    //         $message = "<h1>your username is".$username."</h1><br><h1>the idCode is".$idCode."</h1>";
-    //         $subject="renew the password";
-    //         $this->sendmail($mail,$message,$subject);
-    //         echo 1;
-    //     }
-
-    // }
+   
+   
     function sendUrl($f3)
     {
         $mail = $_GET['mail'];

@@ -97,7 +97,7 @@ class LoginController
         header("Location:login");
     }
 
-//测试数据库操作
+
 
     function home($f3)                              //首页
         {
@@ -108,6 +108,8 @@ class LoginController
             }
             else
             {
+
+            $f3->set('uid',$_SESSION['user_id']);
             echo Template::instance()->render('application/home.html');
             }
         }
