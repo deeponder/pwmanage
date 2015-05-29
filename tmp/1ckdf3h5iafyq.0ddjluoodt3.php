@@ -12,5 +12,7 @@
 	<?php endforeach; ?>
 	 <br>
         <a href="home"><span class="glyphicon glyphicon-menu-left col-md-offset-1"></span>BACK</a>
+
+        
 </body>
 </html>
