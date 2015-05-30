@@ -56,6 +56,7 @@ class LoginController
         else if($numEmail!=0)echo 2;
         else{
             header("Location:login");
+         
             $mysql->nick_name = $username;
             $mysql->password  = md5($password);
             $mysql->email      = $mail;
