@@ -1,2 +1,16 @@
-# footprint
-software engineering big project
+# 密码管家
+软件项目管理大作业
+功能点如下：
+1.完整的登录系统
+2.对密码管理的记录可进行增删改查的操作
+3.进行二次加密，即要看每条记录的密码，需要提供查询密码。
+4.可检索记录
+
+待完善：
+未对信息的有效性进行验证，如是否输入为空等。
+
+相关技术框架：
+1.php框架---fat free framework
+2.前端框架---bootstrap
+3.数据库---Mysql
+4.服务器---Centos+Ngix

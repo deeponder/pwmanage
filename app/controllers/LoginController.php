@@ -5,6 +5,8 @@ class LoginController
         session_start();
         if (!isset($_SESSION['user_id'])) {
             echo Template::instance()->render('application/login.html');
+        }else{
+            header("Location:home");
         }
     }
     
@@ -14,8 +16,13 @@ class LoginController
         $password = $_GET['password'];
         $db       = $f3->get('DB');
         $mysql    = new \DB\SQL\Mapper($db, 'user');
-        $user      = $mysql->find(array('nick_name=? and password=?', $username, md5($password)));
-        if ($user != Null) {
+       $user1 = $mysql->find(array('nick_name=?',$username));
+        $user  = $mysql->find(array('nick_name=? and password=?', $username, md5($password)));
+        if($user1!=Null&&$user==Null&&$user1[0]->status==1)
+        {
+            echo 4;
+        }
+        else if ($user != Null) {
             if($user[0]->status==1)
             {
             echo 1;
@@ -109,8 +116,12 @@ class LoginController
             }
             else
             {
+                $db = $f3->get('DB');
+                $record = new \DB\SQL\Mapper($db, 'records');
+                $records = $record->find(array('user_id=?',$_SESSION['user_id']));
+                $f3->set('list',$records);
+           
 
-            $f3->set('uid',$_SESSION['user_id']);
             echo Template::instance()->render('application/home.html');
             }
         }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FindPw</title>
+<title>找回密码</title>
 <link href="app/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="app/assets/css/login.css" rel="stylesheet" type="text/css">
 
@@ -13,7 +13,7 @@
 <script src="vendor/jquery/jquery-1.11.3.min.js"></script>
 <script src="vendor/jquery/bootstrap.min.js"></script>
 <script type="text/javascript" src="vendor/jquery/jquery-1.6.2.min.js"></script>
-<p align="center" style=" margin-top:150px; "><font size="+5" color="#FFFFFF">FootPrint</font></p>
+<p align="center" style=" margin-top:150px; "><font size="+5" color="#FFFFFF">密码管家</font></p>
 <div id="div">
 <div></div>
 
@@ -21,13 +21,13 @@
   
    <form method="post" action="" onsubmit="" class="login">
     <p>
-      <label for="login" ><font color="#FFFFFF">e-mail:</font></label>
+      <label for="login" ><font color="#FFFFFF">邮箱:</font></label>
       <input type="text" name="id" id="id" value=""></input>
     </p>
 
     </form>
 </div>
-<p align="center"><button type="button" class="btn btn-primary" style="background-color:#060; border-color:#030; width:100px;" onclick="check()" >confirm</button></p>
+<p align="center"><button type="button" class="btn btn-primary" style="background-color:#060; border-color:#030; width:100px;" onclick="check()" >发送</button></p>
 </div>
 </body>
 <script type="text/javascript">
@@ -47,7 +47,7 @@ function check()
       }
       else
       {
-        window.location.href="verifying";
+        window.location.href="jumping";
       }
     },
     error:function(data)
