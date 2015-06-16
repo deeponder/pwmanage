@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+#div{
+	padding-top:8px;
+	background-color:#000;
+	position: relative;
+	left:32%;
+	top:20px;
+	right::35%;
+	filter: alpha(opacity=0); 
+	opacity: 0.8;
+	width:460px;
+	height:250px;
+	 border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+ borrder-shadow:10px 10px 5px 5px #000 outset;
+}
