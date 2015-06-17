@@ -30,7 +30,7 @@
                 </form>
 
                 <div class="navbar-form navbar-right">
-                	 <a href="logout"><button class="btn btn-default">退出登录</button></a>
+                	 <a href="logout"><button class="btn btn-default" data-toggle="modal" data-target="#addModal">退出登录</button></a>
                 </div>
 
             </div>
@@ -50,17 +50,17 @@
 
                 </thead>
                  <tbody>
-                 <repeat group="{{ @list }}" value="{{ @list }}">
+                 <?php foreach (($list?:array()) as $list): ?>
                   <tr>
-                    <td>{{@list.web_site}}</td>
-                    <td>{{@list.user_name}}</td>
-                    <td id="{{@list.id}}">  <button class="btn btn-info btn-xs password" data-toggle="modal" data-target="#sepwModal" rel="{{@list.id}}"> <span class="glyphicon glyphicon-eye-open"></span>查看密码</button></td>
-                    <td>{{@list.remarks}}</td>
-                    <td><button class="btn btn-default btn-xs editrecord" data-toggle="modal" data-target="#editModal" rel="{{@list.id}}"> <span class="glyphicon glyphicon-edit"></span>修改记录</button></td>
-                    <td>  <button class="btn btn-danger btn-xs delrecord" rel="{{@list.id}}"> <span class="glyphicon glyphicon-trash"></span>删除记录</button></td>
+                    <td><?php echo $list['web_site']; ?></td>
+                    <td><?php echo $list['user_name']; ?></td>
+                    <td id="<?php echo $list['id']; ?>">  <button class="btn btn-info btn-xs password" data-toggle="modal" data-target="#sepwModal" rel="<?php echo $list['id']; ?>"> <span class="glyphicon glyphicon-eye-open"></span>查看密码</button></td>
+                    <td><?php echo $list['remarks']; ?></td>
+                    <td><button class="btn btn-default btn-xs editrecord" data-toggle="modal" data-target="#editModal" rel="<?php echo $list['id']; ?>"> <span class="glyphicon glyphicon-edit"></span>修改记录</button></td>
+                    <td>  <button class="btn btn-danger btn-xs delrecord" rel="<?php echo $list['id']; ?>"> <span class="glyphicon glyphicon-trash"></span>删除记录</button></td>
                   
                   </tr>
-                  </repeat>
+                  <?php endforeach; ?>
                 </tbody>
             </table>
 
