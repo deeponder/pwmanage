@@ -9,7 +9,7 @@
 
 </head>
 
-<body background="app/assets/images/body1.jpg">
+<body>
 <script src="vendor/jquery/jquery-1.11.3.min.js"></script>
 <script src="vendor/jquery/bootstrap.min.js"></script>
 <script type="text/javascript" src="vendor/jquery/jquery-1.6.2.min.js"></script>
@@ -19,7 +19,7 @@
 
 <div style="padding: 20px 100px 20px 140px;">
   
-   <form method="post" action="" onsubmit="" class="login">
+  <!--  <form method="post" action="" onsubmit="" class="login">
     <p>
       <label for="login" ><font color="#FFFFFF">用户名:</font></label>
       <input type="text" name="id" id="id" value=""></input>
@@ -30,9 +30,24 @@
       <input type="password" name="password" id="password" value=""></input>
     </p>
 
+    </form> -->
+    <form action="" method="POST" role="form">
+    
+      <div class="form-group">
+        <!-- <label for="username">label</label> -->
+        <input type="text" class="form-control" id="username" placeholder="请输入您的用户名">
+      </div>
+    
+       <div class="form-group">
+        <!-- <label for="username">label</label> -->
+        <input type="text" class="form-control" id="password" placeholder="请输入您的密码">
+      </div>
+    
     </form>
 </div>
-<p align="center"><button type="button" class="btn btn-primary" style="background-color:#060; border-color:#030; width:100px;" onclick="check()" >登陆</button></p><a href="forgetpass"  style="margin-right:100px;float:right">忘记密码?</a><a href="register"  style="margin-right:70px;float:right">注册</a>
+<p align="center"><button type="button" class="btn btn-primary" style="background-color:#060; border-color:#030; width:100px;" onclick="check()" >登陆</button></p>
+<a href="forgetpass"  style="margin-right:30%;float:right">忘记密码?</a>
+<a href="register"  style="margin-right:70px;float:right">注册</a>
 </div>
 </body>
 <script type="text/javascript">

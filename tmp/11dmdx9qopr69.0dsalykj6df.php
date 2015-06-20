@@ -30,7 +30,7 @@
                 </form>
 
                 <div class="navbar-form navbar-right">
-                	 <a href="logout"><button class="btn btn-default" data-toggle="modal" data-target="#addModal">退出登录</button></a>
+                	 <a href="logout"><button class="btn btn-default">退出登录</button></a>
                 </div>
 
             </div>
